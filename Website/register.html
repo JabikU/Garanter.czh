@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garanter</title>
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function validateForm(event) {
+      // Получаем значения полей
+      var username = document.getElementById("username").value;
+      var phoneNumber = document.getElementById("phoneNumber").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      // Проверка на пустые поля
+      if (!username || !phoneNumber || !email || !password) {
+        event.preventDefault(); // Остановить отправку формы
+        alert("Please fill in all fields."); // Показать предупреждение
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <section> <span></span> 
+    <div class="signin">
+      <div class="content">
+        <h2>Garanter</h2>
+        <h3>Register</h3>
+        
+        <div class="form">
+          <div class="inputBox">
+            <input type="text" id="username" required> <i>Username</i>
+          </div>
+          <div class="inputBox">
+            <input type="text" id="phoneNumber" required> <i>Phone Number</i>
+          </div>
+          <div class="inputBox">
+            <input type="text" id="email" required> <i>Email</i>
+          </div>
+          <div class="inputBox">
+            <input type="password" id="password" required> <i>Password</i>
+          </div>
+          <div class="inputBox">
+            <form action="success.html" onsubmit="validateForm(event)">
+              <input type="submit" value="Register">
+            </form>
+          </div>
+          <div class="links"> <a href="index.html">Back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+</body>
+</html>
